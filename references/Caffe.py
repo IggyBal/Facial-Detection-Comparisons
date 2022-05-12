@@ -9,7 +9,7 @@ drawing = mp.solutions.drawing_utils
 
 
 # For webcam input:
-cap = cv2.VideoCapture(1)
+cap = cv2.VideoCapture(0)
 
 with faceDetector.FaceDetection(
 
@@ -49,7 +49,7 @@ with faceDetector.FaceDetection(
 
         boundBox = int(bBox.xmin * w), int(bBox.ymin * h), int(bBox.width * w), int(bBox.height * h)
 
-        cv2.putText(image, f'{int(detection.score[0]*100)}%', (boundBox[0], boundBox[1] - 20), cv2.FONT_HERSHEY_COMPLEX, 1.5, (0,255,0), 2)
+        cv2.putText(image, f'{int(detection.score[0]*100)}%', (boundBox[0], boundBox[1] - 20), cv2.FONT_HERSHEY_SIMPLEX, 1.5, (0,255,0), 2)
 
     cv2.imshow('MediaPipe Face Detection', image)
 
